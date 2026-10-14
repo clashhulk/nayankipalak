@@ -36,6 +36,11 @@ footer [data-couple] {
 .families h2 {
   font-size: clamp(38px, 10vw, 48px);
 }
+#family-name::first-letter {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 500;
+}
 
 /* Full-resolution, lossless illustrations determine their own height.
    Never resize width and height independently: it distorts faces and decor. */
