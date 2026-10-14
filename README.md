@@ -6,6 +6,7 @@ Static wedding invitation, adapted from the supplied public mockup. The illustra
 
 - The family closing now reads **Agrawal Family**.
 - Each event card shows **Shree Path Villa, Amoda, Shirpur** for 9–10 December or **Madhuban Lawns, Agrawal Complex, Opp Bus Stand, Shirpur** for 11–12 December.
+- Venue details appear directly below the time on the artwork, labeled `Timing : …` and `Venue : …`.
 - The inline couple names use separate spans with explicit space around the ampersand. The welcome names also have more vertical space.
 - All seven events have separate, lossless WebP illustrations, including the newer artwork on the published site. Images retain their native aspect ratios and are never stretched independently in width and height.
 - The “Made for each other” gallery now uses all three supplied couple photos, preserved as the original JPEG files in `assets/couple/`. Portrait frames display the full photos without stretching or cropping; swipe, arrow, and dot controls switch between them.

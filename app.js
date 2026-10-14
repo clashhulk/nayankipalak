@@ -129,7 +129,7 @@ const eventArtwork = {
 data.events.forEach(event => {
   const card = document.createElement('article');
   card.className = `event ${event.theme} reveal`;
-  card.innerHTML = '<div class="event-art"><img class="event-image" alt="" loading="lazy" decoding="async"><div class="event-copy"><span class="eyebrow"></span><h3></h3><div class="event-date"><strong></strong><span></span></div><p class="event-time"></p></div></div><div class="event-venue"><span class="eyebrow">Venue</span><p class="venue-name"></p><p class="venue-address"></p></div>';
+  card.innerHTML = '<div class="event-art"><img class="event-image" alt="" loading="lazy" decoding="async"><div class="event-copy"><span class="eyebrow"></span><h3></h3><div class="event-date"><strong></strong><span></span></div><p class="event-time"></p><p class="event-venue"></p></div></div>';
   const artwork = eventArtwork[event.theme];
   const image = card.querySelector('.event-image');
   image.src = artwork.src;
@@ -139,9 +139,8 @@ data.events.forEach(event => {
   card.querySelector('h3').textContent = event.name;
   card.querySelector('.event-date strong').textContent = event.day;
   card.querySelector('.event-date span').textContent = event.month;
-  card.querySelector('.event-time').textContent = event.time;
-  card.querySelector('.venue-name').textContent = event.venue.name;
-  card.querySelector('.venue-address').textContent = event.venue.address;
+  card.querySelector('.event-time').textContent = `Timing : ${event.time}`;
+  card.querySelector('.event-venue').textContent = `Venue : ${venueLabel(event)}`;
   card.setAttribute('aria-label', `${event.name}, ${event.day} ${event.month} ${data.year}, ${event.time}, India Standard Time. Venue: ${venueLabel(event)}`);
   $('#event-list').append(card);
 });
