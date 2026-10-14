@@ -37,17 +37,20 @@ const nextDay = new Date(`${data.date}T00:00:00Z`);
 nextDay.setUTCDate(nextDay.getUTCDate() + 1);
 const endDay = nextDay.toISOString().slice(0, 10).replaceAll('-', '');
 const calendar = new URL('https://calendar.google.com/calendar/render');
+const venueLabel = event => `${event.venue.name}, ${event.venue.address}`;
+const weddingEvent = data.events.find(event => event.theme === 'wedding');
 calendar.search = new URLSearchParams({
   action: 'TEMPLATE',
   text: `${data.bride} weds ${data.groom} | ${data.hashtag}`,
   dates: `${weddingDay}/${endDay}`,
   ctz: data.timezone,
+  location: venueLabel(weddingEvent),
   details: [
     `${data.bride} weds ${data.groom}`,
     data.hashtag,
     '',
     'Our celebration schedule (all times in India Standard Time):',
-    ...data.events.map(event => `${event.day} ${event.month} ${data.year} — ${event.name}: ${event.time}`),
+    ...data.events.map(event => `${event.day} ${event.month} ${data.year} — ${event.name}: ${event.time}\nVenue: ${venueLabel(event)}`),
     '',
     data.closing
   ].join('\n')
@@ -126,7 +129,7 @@ const eventArtwork = {
 data.events.forEach(event => {
   const card = document.createElement('article');
   card.className = `event ${event.theme} reveal`;
-  card.innerHTML = '<div class="event-art"><img class="event-image" alt="" loading="lazy" decoding="async"><div class="event-copy"><span class="eyebrow"></span><h3></h3><div class="event-date"><strong></strong><span></span></div><p class="event-time"></p></div></div>';
+  card.innerHTML = '<div class="event-art"><img class="event-image" alt="" loading="lazy" decoding="async"><div class="event-copy"><span class="eyebrow"></span><h3></h3><div class="event-date"><strong></strong><span></span></div><p class="event-time"></p></div></div><div class="event-venue"><span class="eyebrow">Venue</span><p class="venue-name"></p><p class="venue-address"></p></div>';
   const artwork = eventArtwork[event.theme];
   const image = card.querySelector('.event-image');
   image.src = artwork.src;
@@ -137,7 +140,9 @@ data.events.forEach(event => {
   card.querySelector('.event-date strong').textContent = event.day;
   card.querySelector('.event-date span').textContent = event.month;
   card.querySelector('.event-time').textContent = event.time;
-  card.setAttribute('aria-label', `${event.name}, ${event.day} ${event.month} ${data.year}, ${event.time}, India Standard Time`);
+  card.querySelector('.venue-name').textContent = event.venue.name;
+  card.querySelector('.venue-address').textContent = event.venue.address;
+  card.setAttribute('aria-label', `${event.name}, ${event.day} ${event.month} ${data.year}, ${event.time}, India Standard Time. Venue: ${venueLabel(event)}`);
   $('#event-list').append(card);
 });
 

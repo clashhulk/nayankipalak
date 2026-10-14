@@ -65,6 +65,27 @@ footer [data-couple] {
   width: 100%;
   height: auto;
 }
+.event-venue {
+  max-width: none;
+  padding: 20px 22px 23px;
+  border-top: 1px solid #d7b77777;
+  background: #fff8eb;
+  color: var(--ink);
+  text-align: center;
+}
+.event-venue .eyebrow {
+  color: #795122;
+  text-transform: uppercase;
+}
+.event-venue .venue-name {
+  margin: 6px 0 4px;
+  color: var(--wine);
+  font: 600 24px/1.25 var(--serif);
+}
+.event-venue .venue-address {
+  margin: 0;
+  font: 400 14px/1.6 var(--sans);
+}
 .event-copy {
   position: absolute;
   z-index: 1;
