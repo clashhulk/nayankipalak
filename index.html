@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#831832">
+  <meta name="description" content="Palak weds Nayan — 12 December 2026. Join our wedding celebrations, 9–12 December. #nayankipalak">
+  <meta property="og:title" content="Palak weds Nayan | #nayankipalak">
+  <meta property="og:description" content="With the blessings of Lord Shiva and Goddess Parvati. Celebrating our forever on 12 December 2026.">
+  <meta property="og:type" content="website">
+  <title>Palak weds Nayan | #nayankipalak</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <script src="content.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body class="sealed">
+  <div class="ambient" aria-hidden="true"></div>
+  <div id="petals" aria-hidden="true"></div>
+  <div class="cover" id="cover">
+    <div class="cover-scene"></div>
+    <div class="cover-top">
+      <span class="tiny">AN AUSPICIOUS BEGINNING</span>
+      <span class="cover-blessing">A little envelope.<br>A lifetime of love.</span>
+    </div>
+    <div class="envelope-wrap" id="envelope-wrap">
+      <div class="letter"><span>You're invited</span><div class="script" data-couple>Palak &amp; Nayan</div><span>TO CELEBRATE OUR FOREVER</span></div>
+      <div class="envelope-body"></div>
+      <div class="envelope-flap"></div>
+      <button id="seal" class="seal" aria-label="Open the wedding invitation"><span class="seal-monogram">P <small>&amp;</small> N</span></button>
+    </div>
+    <button class="open-label" id="open-label">Tap the seal to open <span>✧</span></button>
+    <p class="cover-bottom">A CELEBRATION BLESSED BY SHIVA &amp; PARVATI</p>
+  </div>
+  <main id="invitation" inert>
+    <section class="welcome" id="nayankipalak" aria-label="Our wedding invitation">
+      <img src="assets/temple.png" alt="Shiva and Parvati above a traditional wedding mandap, surrounded by marigolds and banana leaves" class="welcome-art" fetchpriority="high">
+      <div class="welcome-copy">
+        <p class="sanskrit" lang="sa">॥ ॐ नमः शिवाय ॥</p>
+        <p class="blessing" id="blessing"></p>
+        <span class="ornament">✧</span>
+        <p class="intro" id="intro"></p>
+        <h1><span id="bride">Palak</span><small>weds</small><span id="groom">Nayan</span></h1>
+        <p class="wedding-date"><span data-date>12 December</span><span class="date-year" data-year>2026</span></p>
+        <a class="scroll-cue" href="#celebration" aria-label="Scroll to the celebration">SCROLL TO CELEBRATE<span>⌄</span></a>
+      </div>
+    </section>
+    <nav class="section-nav" aria-label="Invitation sections">
+      <a href="#nayankipalak" aria-label="Palak and Nayan invitation">P &amp; N</a>
+      <a href="#events">Events</a>
+      <a href="#moments">Moments</a>
+    </nav>
+    <section class="celebration section-pad reveal" id="celebration">
+      <span class="eyebrow">TWO HEARTS. ONE BEAUTIFUL BEGINNING.</span>
+      <h2 class="script">We’re getting married</h2>
+      <p>And it wouldn’t be the same without you.</p>
+      <div class="date-display"><span id="date-month">DECEMBER</span><strong id="date-day">12</strong><span data-year>2026</span></div>
+      <a class="outline-button" id="calendar" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Palak%20weds%20Nayan%20%7C%20%23nayankipalak&amp;dates=20261212%2F20261213&amp;ctz=Asia%2FKolkata" target="_blank" rel="noopener noreferrer" aria-label="Save Palak and Nayan’s wedding date in Google Calendar (opens in a new tab)">＋ Save the date</a>
+      <div class="divider">✧</div>
+    </section>
+    <section id="events" class="events section-pad">
+      <header class="reveal"><span class="eyebrow">COME FOR THE LOVE, STAY FOR THE MEMORIES</span><h2 class="script">Events Schedule</h2><p>A few days. A thousand beautiful moments.</p></header>
+      <div id="event-list"></div>
+    </section>
+    <section class="moments section-pad reveal" id="moments">
+      <span class="eyebrow">LITTLE MOMENTS, FOREVER MEMORIES</span>
+      <h2 class="script">Made for each other</h2>
+      <div class="gallery" aria-roledescription="carousel" aria-label="Palak and Nayan’s photos" tabindex="0">
+        <button class="gallery-arrow previous" aria-label="Previous moment">‹</button>
+        <div class="gallery-stage" id="gallery-stage"></div>
+        <button class="gallery-arrow next" aria-label="Next moment">›</button>
+      </div>
+      <p class="gallery-caption" id="gallery-caption" aria-live="polite"></p>
+      <div class="gallery-dots" id="gallery-dots"></div>
+      <p class="swipe-hint">Swipe through our moments</p>
+    </section>
+    <section class="families section-pad reveal"><p id="family-note"></p><h2 class="script" id="family-name">Agrawal Family</h2><div class="divider">✧</div><p id="closing"></p></section>
+    <footer>
+      <p class="eyebrow">TOGETHER IS A BEAUTIFUL PLACE TO BE</p>
+      <p class="script" data-couple>Palak &amp; Nayan</p>
+      <p><span data-date>12 December</span> <span data-year>2026</span></p>
+      <a class="couple-hashtag" href="#nayankipalak">#nayankipalak</a>
+      <button id="replay">Reopen the invitation <span>↺</span></button>
+    </footer>
+  </main>
+  <button class="music-toggle" id="music-toggle" aria-label="Play invitation music" aria-pressed="false" hidden><span id="music-icon">♫</span><span class="sr-only" id="music-state">Music off</span></button>
+  <audio id="music" src="assets/o-rangrez-instrumental.mp3" loop preload="none"></audio>
+  <noscript><style>.cover{display:none}body.sealed{overflow:auto}main{opacity:1}.reveal{opacity:1;transform:none}</style><p class="no-script">Please enable JavaScript to open the full invitation and see the events.</p></noscript>
+</body>
+</html>

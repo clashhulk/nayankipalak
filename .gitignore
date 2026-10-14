@@ -1,0 +1,16 @@
+.DS_Store
+*.zip
+preview/
+node_modules/
+.env
+.env.*
+!.env.example
+.vercel/
+
+# Original artwork and music superseded by the final website assets.
+assets/celebrations.png
+assets/more-celebrations.png
+assets/mehendi.png
+assets/haldi.png
+assets/mehendi-floral.png
+assets/invitation-music.mp3
