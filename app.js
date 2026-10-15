@@ -140,7 +140,9 @@ data.events.forEach(event => {
   card.querySelector('.event-date strong').textContent = event.day;
   card.querySelector('.event-date span').textContent = event.month;
   card.querySelector('.event-time').textContent = `Timing : ${event.time}`;
-  card.querySelector('.event-venue').textContent = `Venue : ${venueLabel(event)}`;
+  card.querySelector('.event-venue').textContent = event.theme === 'mehendi'
+    ? `Venue : ${event.venue.name},\n${event.venue.address}`
+    : `Venue : ${venueLabel(event)}`;
   card.setAttribute('aria-label', `${event.name}, ${event.day} ${event.month} ${data.year}, ${event.time}, India Standard Time. Venue: ${venueLabel(event)}`);
   $('#event-list').append(card);
 });

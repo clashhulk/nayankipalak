@@ -96,13 +96,24 @@ footer [data-couple] {
   text-wrap: pretty;
 }
 .mehendi .event-copy {
-  top: 16%;
+  top: 14%;
   color: #294e37;
   background: radial-gradient(ellipse, #f6f5df8f, #f6f5df00 75%);
 }
 .mehendi .event-copy h3,
 .mehendi .event-copy .eyebrow {
   color: #294e37;
+}
+.mehendi .event-copy h3 {
+  margin: 10px 0 12px;
+}
+.mehendi .event-copy .event-time {
+  margin-top: 12px;
+}
+.mehendi .event-copy .event-venue {
+  max-width: min(66%, 210px);
+  margin-top: 6px;
+  white-space: pre-line;
 }
 .sangeet .event-copy,
 .reception .event-copy {
@@ -142,4 +153,5 @@ footer [data-couple] {
   .mehendi .event-copy { top: 13%; padding-top: 6px; padding-bottom: 6px; }
   .mehendi .event-copy h3 { font-size: 30px; margin-bottom: 10px; }
   .mehendi .event-date strong { font-size: 34px; }
+  .mehendi .event-copy .event-venue { font-size: 12px; }
 }
